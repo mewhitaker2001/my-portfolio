@@ -48,7 +48,7 @@ export default function BigHoffasPage() {
               <div className="grid grid-cols-3 gap-6 mb-12">
                 <div className="border-l-4 border-orange-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Duration</div>
-                  <div className="text-2xl font-bold">3 Weeks</div>
+                  <div className="text-xl md:text-2xl font-bold break-words">3 Weeks</div>
                 </div>
                 <div className="border-l-4 border-orange-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Team</div>

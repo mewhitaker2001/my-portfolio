@@ -75,7 +75,7 @@ export default function IndyFoodLinksPage() {
               <div className="grid grid-cols-3 gap-6 mb-12">
                 <div className="border-l-4 border-teal-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Duration</div>
-                  <div className="text-2xl font-bold">2 Semesters</div>
+                  <div className="text-lg md:text-2xl font-bold leading-tight">2 Semesters</div>
                 </div>
                 <div className="border-l-4 border-teal-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Team</div>

@@ -10,16 +10,8 @@ export default function Navigation() {
     <nav className="fixed top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="container mx-auto px-6">
         <div className="flex h-20 items-center justify-between">
-          {/* Mobile - Stacked */}
-          <Link href="/" className="md:hidden">
-            <div className="text-center font-manrope font-extrabold">
-              <div className="text-lg font-normal text-stone-900">Maddie</div>
-              <div className="text-lg font-bold text-lime-600">Whitaker</div>
-            </div>
-          </Link>
-
-          {/* Desktop - Horizontal */}
-          <Link href="/" className="hidden md:block text-2xl font-manrope font-extrabold transition-colors">
+          {/* Mobile & Desktop - One line */}
+          <Link href="/" className="text-xl md:text-2xl font-manrope font-extrabold transition-colors">
             <span className="font-normal text-stone-900">Maddie</span> <span className="font-bold text-lime-600">Whitaker</span>
           </Link>
 
@@ -48,7 +40,7 @@ export default function Navigation() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-white">
-              <div className="flex flex-col space-y-6 mt-12">
+              <div className="flex flex-col space-y-6 mt-12 px-6">
                 <Link href="/projects" className="text-left text-2xl font-bold hover:text-lime-600 transition-colors">
                   Work
                 </Link>

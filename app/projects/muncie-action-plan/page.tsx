@@ -22,13 +22,13 @@ function LogoProcessTabs() {
 
   return (
     <div className="w-full">
-      {/* Tab Navigation */}
+      {/* Tab Navigation - Fixed wrapping */}
       <div className="flex flex-wrap justify-center gap-3 mb-12">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all text-base ${
+            className={`px-4 md:px-6 py-3 rounded-xl font-semibold transition-all text-sm md:text-base ${
               activeTab === tab.id
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700'
@@ -40,26 +40,28 @@ function LogoProcessTabs() {
       </div>
 
       {/* Tab Content */}
-      <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+      <div className="bg-white rounded-2xl shadow-xl p-4 md:p-8 lg:p-12">
         {/* Concept 1 */}
         {activeTab === "concept1" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Concept 1: Community Blocks</h3>
-            <div className="aspect-[3/1] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
-              <img
-                src="/images/map-concept-1.jpg"
-                alt="MAP Logo Concept 1"
-                className="w-full h-full object-contain bg-white p-8"
-              />
-            </div>
-            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
-              This concept centers on the acronym MAP, styled as bold "roads" that cut through colorful blocks, 
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Concept 1: Community Blocks</h3>
+            <a href="/images/map-concept-1.jpg" target="_blank" className="block cursor-zoom-in">
+              <div className="aspect-[4/3] md:aspect-[3/1] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
+                <img
+                  src="/images/map-concept-1.jpg"
+                  alt="MAP Logo Concept 1 - Click to enlarge"
+                  className="w-full h-full object-contain bg-white p-4 md:p-8 hover:opacity-90 transition-opacity"
+                />
+              </div>
+            </a>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
+              This concept centers on the acronym MAP, styled as bold roads that cut through colorful blocks, 
               symbolizing guidance, connection, and community pathways.
             </p>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Community Focus</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Bold Typography</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Map Metaphor</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Community Focus</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Bold Typography</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Map Metaphor</Badge>
             </div>
           </div>
         )}
@@ -67,22 +69,24 @@ function LogoProcessTabs() {
         {/* Concept 2 */}
         {activeTab === "concept2" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Concept 2: Local Landmarks</h3>
-            <div className="aspect-[3/1] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
-              <img
-                src="/images/map-concept-2.jpg"
-                alt="MAP Logo Concept 2"
-                className="w-full h-full object-contain bg-white p-8"
-              />
-            </div>
-            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
-              Custom letterforms representing MAP's values and Muncie's landmarks, including the Walnut Street 
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Concept 2: Local Landmarks</h3>
+            <a href="/images/map-concept-2.jpg" target="_blank" className="block cursor-zoom-in">
+              <div className="aspect-[4/3] md:aspect-[3/1] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
+                <img
+                  src="/images/map-concept-2.jpg"
+                  alt="MAP Logo Concept 2 - Click to enlarge"
+                  className="w-full h-full object-contain bg-white p-4 md:p-8 hover:opacity-90 transition-opacity"
+                />
+              </div>
+            </a>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
+              Custom letterforms representing MAP&apos;s values and Muncie&apos;s landmarks, including the Walnut Street 
               roundabout and White River.
             </p>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Local Identity</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Custom Lettering</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Geographic Elements</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Local Identity</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Custom Lettering</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Geographic Elements</Badge>
             </div>
           </div>
         )}
@@ -90,22 +94,24 @@ function LogoProcessTabs() {
         {/* Concept 3 */}
         {activeTab === "concept3" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Concept 3: Navigation & Growth</h3>
-            <div className="aspect-[3/1] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
-              <img
-                src="/images/map-concept-3.jpg"
-                alt="MAP Logo Concept 3"
-                className="w-full h-full object-contain bg-white p-8"
-              />
-            </div>
-            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Concept 3: Navigation & Growth</h3>
+            <a href="/images/map-concept-3.jpg" target="_blank" className="block cursor-zoom-in">
+              <div className="aspect-[4/3] md:aspect-[3/1] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
+                <img
+                  src="/images/map-concept-3.jpg"
+                  alt="MAP Logo Concept 3 - Click to enlarge"
+                  className="w-full h-full object-contain bg-white p-4 md:p-8 hover:opacity-90 transition-opacity"
+                />
+              </div>
+            </a>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
               Bold MAP acronym with pin element, with the flowing line representing White River while the
               straight line signifies roads and pathways, symbolizing navigation and growth.
             </p>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Navigation</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Growth</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">River & Roads</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Navigation</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Growth</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">River & Roads</Badge>
             </div>
           </div>
         )}
@@ -113,38 +119,42 @@ function LogoProcessTabs() {
         {/* Revisions */}
         {activeTab === "revisions" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Client Feedback & Revisions</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Client Feedback & Revisions</h3>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="aspect-[3/2] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/map-revision-1.jpg"
-                  alt="MAP Logo Revision 1"
-                  className="w-full h-full object-contain bg-white p-6"
-                />
-              </div>
-              <div className="aspect-[3/2] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
-                <img
-                  src="/images/map-revision-2.jpg"
-                  alt="MAP Logo Revision 2"
-                  className="w-full h-full object-contain bg-white p-6"
-                />
-              </div>
+              <a href="/images/map-revision-1.jpg" target="_blank" className="block cursor-zoom-in">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
+                  <img
+                    src="/images/map-revision-1.jpg"
+                    alt="MAP Logo Revision 1 - Click to enlarge"
+                    className="w-full h-full object-contain bg-white p-4 md:p-6 hover:opacity-90 transition-opacity"
+                  />
+                </div>
+              </a>
+              <a href="/images/map-revision-2.jpg" target="_blank" className="block cursor-zoom-in">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden">
+                  <img
+                    src="/images/map-revision-2.jpg"
+                    alt="MAP Logo Revision 2 - Click to enlarge"
+                    className="w-full h-full object-contain bg-white p-4 md:p-6 hover:opacity-90 transition-opacity"
+                  />
+                </div>
+              </a>
             </div>
-            <div className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto space-y-4">
+            <div className="text-base md:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto space-y-4">
               <p>
                 The client favored Concepts 1 and 3, requesting a few refinements.
               </p>
               <p>
-                <strong>Concept 1 Revision:</strong> Color adjustments to align with MAP's traditional palette.
+                <strong>Concept 1 Revision:</strong> Color adjustments to align with MAP&apos;s traditional palette.
               </p>
               <p>
                 <strong>Concept 3 Revision:</strong> Adjusted pin shape to read more clearly as a location marker.
               </p>
             </div>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Client Collaboration</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Brand Alignment</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Iterative Design</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Client Collaboration</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Brand Alignment</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Iterative Design</Badge>
             </div>
           </div>
         )}
@@ -152,42 +162,44 @@ function LogoProcessTabs() {
         {/* Final Logo */}
         {activeTab === "final" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Final Logo Solution</h3>
-            <div className="aspect-[2/1] bg-white border-2 border-blue-200 rounded-2xl overflow-hidden p-12">
-              <img
-                src="/images/map-final-logo.jpg"
-                alt="MAP Final Logo Design"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
-              The redesigned identity honors MAP's existing brand while modernizing its visual language. 
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Final Logo Solution</h3>
+            <a href="/images/map-final-logo.jpg" target="_blank" className="block cursor-zoom-in">
+              <div className="aspect-[3/2] md:aspect-[2/1] bg-white border-2 border-blue-200 rounded-2xl overflow-hidden p-6 md:p-12">
+                <img
+                  src="/images/map-final-logo.jpg"
+                  alt="MAP Final Logo Design - Click to enlarge"
+                  className="w-full h-full object-contain hover:opacity-90 transition-opacity"
+                />
+              </div>
+            </a>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
+              The redesigned identity honors MAP&apos;s existing brand while modernizing its visual language. 
               The result is professional and flexible enough to work across all their communications, 
-              reflecting their mission to support and guide Muncie's community growth.
+              reflecting their mission to support and guide Muncie&apos;s community growth.
             </p>
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div className="border-l-4 border-blue-600 pl-6">
-                <h4 className="font-bold text-xl mb-3">Primary Applications</h4>
-                <ul className="space-y-2 text-slate-600">
+                <h4 className="font-bold text-lg md:text-xl mb-3">Primary Applications</h4>
+                <ul className="space-y-2 text-sm md:text-base text-slate-600">
                   <li>Official documentation</li>
-                    <li>Newsletters</li>
-                    <li>Community Flyers</li>
-                    <li>Signage</li>
+                  <li>Newsletters</li>
+                  <li>Community Flyers</li>
+                  <li>Signage</li>
                 </ul>
               </div>
               <div className="border-l-4 border-blue-600 pl-6">
-                <h4 className="font-bold text-xl mb-3">Key Features</h4>
-                <ul className="space-y-2 text-slate-600">
+                <h4 className="font-bold text-lg md:text-xl mb-3">Key Features</h4>
+                <ul className="space-y-2 text-sm md:text-base text-slate-600">
                   <li>Scalable design</li>
-                    <li>High contrast</li>
-                    <li>Versatile color options</li>
-                    <li>Clear typography</li>
+                  <li>High contrast</li>
+                  <li>Versatile color options</li>
+                  <li>Clear typography</li>
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Final Solution</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Brand Foundation</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Final Solution</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Brand Foundation</Badge>
             </div>
           </div>
         )}
@@ -195,7 +207,7 @@ function LogoProcessTabs() {
         {/* Logo Animation */}
         {activeTab === "animation" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Logo Transformation</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Logo Transformation</h3>
             <div className="aspect-video bg-black rounded-2xl overflow-hidden">
               <video
                 className="w-full h-full object-contain"
@@ -206,12 +218,12 @@ function LogoProcessTabs() {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
-              Animation demonstrating the transformation from MAP's first logo to the new design.
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
+              Animation demonstrating the transformation from MAP&apos;s first logo to the new design.
             </p>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Brand Evolution</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Motion Design</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Brand Evolution</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Motion Design</Badge>
             </div>
           </div>
         )}
@@ -219,7 +231,7 @@ function LogoProcessTabs() {
         {/* Design Explanation */}
         {activeTab === "explanation" && (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-center">Design Strategy & Rationale</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-center">Design Strategy & Rationale</h3>
             <div className="aspect-video bg-black rounded-2xl overflow-hidden">
               <video
                 className="w-full h-full object-contain"
@@ -230,12 +242,12 @@ function LogoProcessTabs() {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
               Team walkthrough of strategic thinking, design decisions, and community research behind the redesign.
             </p>
-            <div className="flex justify-center gap-3 mt-6">
-              <Badge className="bg-black text-white text-sm px-4 py-2">Strategic Thinking</Badge>
-              <Badge className="bg-black text-white text-sm px-4 py-2">Design Process</Badge>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Strategic Thinking</Badge>
+              <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Design Process</Badge>
             </div>
           </div>
         )}
@@ -243,7 +255,6 @@ function LogoProcessTabs() {
     </div>
   )
 }
-
 export default function MuncieActionPlanPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -286,7 +297,7 @@ export default function MuncieActionPlanPage() {
               <div className="grid grid-cols-3 gap-6 mb-12">
                 <div className="border-l-4 border-blue-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Duration</div>
-                  <div className="text-2xl font-bold">2 Semesters</div>
+                  <div className="text-lg md:text-2xl font-bold leading-tight">2 Semesters</div>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Team</div>
