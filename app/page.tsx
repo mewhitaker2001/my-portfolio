@@ -4,12 +4,34 @@ import { useState, useEffect } from 'react'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Mail, MapPin, Linkedin, Globe, Download, ArrowRight, Sparkles } from "lucide-react"
+import { Mail, Linkedin, Download, ArrowRight, Sparkles } from "lucide-react"
 import Navigation from "@/app/components/Navigation"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
+  const [activeProject, setActiveProject] = useState(0)
+
+  const heroProjects = [
+    {
+      image: "/images/muncie-outreach-hero.jpg",
+      title: "Muncie OUTreach",
+      category: "Social Media Design",
+      gradient: "from-pink-500/30 to-purple-600/30"
+    },
+    {
+      image: "/images/big-hoffas-hero.jpg",
+      title: "Big Hoffa's BBQ",
+      category: "Logo Design",
+      gradient: "from-orange-500/30 to-red-600/30"
+    },
+    {
+      image: "/images/radiance-hero.jpg",
+      title: "Radiance Cinema",
+      category: "Brand Identity",
+      gradient: "from-red-600/30 to-red-800/30"
+    }
+  ]
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -18,9 +40,14 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('mousemove', handleMouseMove)
     
+    const interval = setInterval(() => {
+      setActiveProject((prev) => (prev + 1) % heroProjects.length)
+    }, 4000)
+    
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('mousemove', handleMouseMove)
+      clearInterval(interval)
     }
   }, [])
 
@@ -29,7 +56,7 @@ export default function Home() {
   }
 
   return (
-    <div className={`min-h-screen bg-white`}>
+    <div className="min-h-screen bg-white">
       {/* Floating cursor effect */}
       <div
         className="fixed w-6 h-6 border-2 border-lime-200 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100"
@@ -38,73 +65,83 @@ export default function Home() {
           top: `${cursorPos.y}px`,
           transform: 'translate(-50%, -50%)'
         }}
-      ></div>
+      />
 
       <Navigation />
 
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div
-            className="absolute w-96 h-96 bg-lime-400/20 rounded-full blur-3xl"
-            style={{
-              top: '20%',
-              left: '10%',
-              transform: `translate(${scrollY * 0.1}px, ${scrollY * 0.15}px)`
-            }} />
-          <div
-            className="absolute w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"
-            style={{
-              bottom: '20%',
-              right: '10%',
-              transform: `translate(-${scrollY * 0.08}px, -${scrollY * 0.12}px)`
-            }} />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl">
-            <div className="mb-6 flex items-center gap-3">
-              <Sparkles className="w-6 h-6 text-lime-600" />
-              <span className="text-sm uppercase tracking-widest font-medium">Graphic Designer</span>
-            </div>
-
-            <h1 className="text-6xl md:text-8xl lg:text-9xl mb-8 leading-none" style={{fontFamily: 'manrope', fontWeight: '800'}}>
-              <span className="block font-normal text-stone-900">Maddie</span>
-              <span className="block font-bold text-lime-600">Whitaker</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl max-w-2xl mb-12 text-slate-600 leading-relaxed">
-              Creating <span className="font-bold text-black">bold visuals</span> and <span className="font-bold text-black">functional experiences</span> that make communities thrive
-            </p>
-
-            <div className="flex gap-4 flex-wrap">
-              <Button
-                size="lg"
-                className="text-lg px-10 py-6 bg-black hover:bg-lime-600 text-white hover:text-black transition-all group"
-                asChild
+      {/* Hero Section - Immersive Split Screen */}
+      <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <div className="absolute inset-0">
+          {/* Left side - Diagonal cut */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-stone-50 to-stone-100 z-10" 
+            style={{ clipPath: 'polygon(0 0, 55% 0, 45% 100%, 0 100%)' }} 
+          />
+          
+          {/* Right side - Project images */}
+          <div className="absolute inset-0">
+            {heroProjects.map((project, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === activeProject ? 'opacity-100' : 'opacity-0'
+                }`}
               >
-                <a href="/projects">
-                  View Projects
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-10 py-6 border-2 border-black hover:bg-black hover:text-white transition-all"
-                onClick={() => scrollToSection('contact')}
-              >
-                Let's Talk
-              </Button>
+                <div className="relative h-full">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    style={{ objectFit: 'cover', objectPosition: '75% center' }}
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-l ${project.gradient}`} />
+                  
+                  {/* Project label */}
+                  <div className="absolute bottom-12 right-12 text-right">
+                    <p className="text-white/80 text-sm mb-1">{project.category}</p>
+                    <h3 className="text-white text-2xl font-bold">{project.title}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Carousel indicators */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {heroProjects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveProject(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === activeProject 
+                      ? 'bg-white w-8' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-pulse" />
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Text content */}
+            <div className="space-y-8 py-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">
+                <Sparkles className="w-6 h-6 text-lime-600" />
+                <span className="uppercase tracking-widest">GRAPHIC DESIGNER</span>
+              </div>
+
+              <h1 className="text-6xl md:text-7xl lg:text-8xl leading-none">
+                <span className="block font-semibold text-stone-900">Maddie</span>
+                <span className="block font-bold text-lime-600">Whitaker</span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-xl">
+                I create <span className="font-semibold text-stone-900">eye-catching designs</span> and{' '}
+                <span className="font-semibold text-stone-900">thoughtful experiences</span> that help make a difference.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -143,7 +180,8 @@ export default function Home() {
                 <img
                   src="/images/muncie-action-plan.jpg"
                   alt="Muncie Action Plan"
-                  className="w-full h-full object-cover" />
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -155,7 +193,8 @@ export default function Home() {
                 <img
                   src="/images/cadence-cinema.jpg"
                   alt="Cadence Magazine"
-                  className="w-full h-full object-cover" />
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
@@ -166,7 +205,7 @@ export default function Home() {
                   Cadence Magazine
                 </h3>
                 <p className="text-lg text-slate-600">
-                  100 Years of Influential Women in Music—editorial design celebrating music history
+                  100 Years of Influential Women in Music, editorial design celebrating music history
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-black text-white">InDesign</Badge>
@@ -213,7 +252,8 @@ export default function Home() {
                 <img
                   src="/images/indy-food-links.jpg"
                   alt="Indy Food Links"
-                  className="w-full h-full object-cover" />
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -255,7 +295,7 @@ export default function Home() {
               <div className="mt-12">
                 <h4 className="text-lg font-bold mb-4">Tools & Tech</h4>
                 <div className="flex flex-wrap gap-2">
-                  {["Illustrator", "InDesign", "After Effects", "Figma", "React", "Next.js", "Tailwind"].map((skill) => (
+                  {["Illustrator", "Photoshop", "InDesign", "After Effects", "Figma", "React", "Next.js", "Tailwind"].map((skill) => (
                     <Badge key={skill} variant="outline" className="border-2 border-slate-300 hover:border-lime-600 hover:text-lime-600 transition-colors">
                       {skill}
                     </Badge>
@@ -282,7 +322,7 @@ export default function Home() {
               <Mail className="mr-2 h-5 w-5" />
               madelinewhitaker2001@gmail.com
             </Button>
-           <Button size="lg" className="text-lg px-10 py-6 bg-white text-black hover:bg-black hover:text-white transition-all" asChild>
+            <Button size="lg" className="text-lg px-10 py-6 bg-white text-black hover:bg-black hover:text-white transition-all" asChild>
               <a href="/Maddie_Whitaker_Resume.pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
@@ -298,14 +338,6 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.behance.net/maddiewhitaker"
-              className="p-4 rounded-full bg-white/20 hover:bg-white text-white hover:text-black transition-all"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Globe className="h-6 w-6" />
             </a>
           </div>
           <div className="mt-16 pt-8 border-t border-white/30 text-white/80">
