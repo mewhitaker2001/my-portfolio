@@ -70,8 +70,9 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section - Immersive Split Screen */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
-        <div className="absolute inset-0">
+      <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-20">
+        {/* Desktop: Split screen layout */}
+        <div className="hidden lg:block absolute inset-0">
           {/* Left side - Diagonal cut */}
           <div 
             className="absolute inset-0 bg-gradient-to-br from-stone-50 to-stone-100 z-10" 
@@ -122,10 +123,29 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="container mx-auto px-6 relative z-10">
+        {/* Mobile: Simple centered content */}
+        <div className="lg:hidden w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-50 to-stone-100 px-6 py-20">
+          <div className="space-y-6 text-center max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">
+              <Sparkles className="w-4 h-4 text-lime-600" />
+              <span className="uppercase tracking-widest text-xs">GRAPHIC DESIGNER</span>
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl leading-none">
+              <span className="block font-semibold text-stone-900">Maddie</span>
+              <span className="block font-bold text-lime-600">Whitaker</span>
+            </h1>
+
+            <p className="text-lg sm:text-xl text-stone-600 leading-relaxed">
+              I design logos, magazines, websites, and more. Recent Ball State grad passionate about projects that help communities.
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop content */}
+        <div className="hidden lg:block container mx-auto px-6 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Text content */}
+            {/* Text content */}
             <div className="space-y-8 py-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">
                 <Sparkles className="w-6 h-6 text-lime-600" />
@@ -138,8 +158,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-xl">
-                I create <span className="font-semibold text-stone-900">eye-catching designs</span> and{' '}
-                <span className="font-semibold text-stone-900">thoughtful experiences</span> that help make a difference.
+                I design logos, magazines, websites, and more. Recent Ball State grad passionate about projects that help communities.
               </p>
             </div>
           </div>
