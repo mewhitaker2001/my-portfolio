@@ -41,7 +41,7 @@ export default function BigHoffasPage() {
               </p>
               
               <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-                A logo redesign for a pirate-themed barbecue restaurant in Westfield, Indiana. Modernizing the brand identity while maintaining the iconic pirate theme and creating a more versatile logo.
+                A conceptual logo redesign for a pirate-themed barbecue restaurant in Westfield, Indiana. The goals was to modernize the logo while keeping the playful, bold personality that everyone loves about Big Hoffa's.
               </p>
 
               {/* Quick Stats */}
@@ -161,8 +161,9 @@ export default function BigHoffasPage() {
               <div>
                 <h3 className="text-3xl font-bold mb-6">Understanding the Market</h3>
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  I analyzed competitor BBQ restaurants in the area to understand common design trends and identify 
-                  opportunities for Big Hoffa's to stand out. Most competitors used oval shapes or traditional BBQ imagery like pigs, making Big Hoffa's pirate theme a unique differentiator worth emphasizing.
+                  I analyzed competitor BBQ restaurants in the area to understand common design trends and identify ways
+                   for Big Hoffa's to stand out. Most competitors used oval shapes or traditional BBQ imagery like pigs, 
+                   making Big Hoffa's pirate theme a unique differentiator worth emphasizing.
                 </p>
                 
                 <p className="text-lg text-slate-600 leading-relaxed">
@@ -383,9 +384,10 @@ export default function BigHoffasPage() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-black mb-8">Key Takeaways</h2>
             <p className="text-xl text-slate-600 leading-relaxed mb-16 max-w-4xl">
-              This logo redesign project reinforced the importance of maintaining brand identity while modernizing 
-              visual language. By preserving the iconic skull element and refining the overall design, the new 
-              logo successfully balances familiarity with freshness.
+              This logo redesign project reinforced the importance of maintaining a brand's core identity and voice
+              while modernizing its visual elements. By focusing on legibility, versatility, and personality, the new
+              Big Hoffa's BBQ logo balances the pirate charm that defines the brand with a fresh, contemporary look that appeals
+              to a wide audience.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">

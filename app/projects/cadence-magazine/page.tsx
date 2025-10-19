@@ -49,7 +49,7 @@ export default function CadenceMagazinePage() {
               <div className="grid grid-cols-3 gap-6 mb-12">
                 <div className="border-l-4 border-purple-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Duration</div>
-                  <div className="text-2xl font-bold">3 Months</div>
+                  <div className="text-xl md:text-2xl font-bold break-words">3 Months</div>
                 </div>
                 <div className="border-l-4 border-purple-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Team</div>
@@ -92,8 +92,7 @@ export default function CadenceMagazinePage() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-black mb-16">The Challenge</h2>
             <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-4xl">
-              Design and produce a full magazine from concept to print, working with editorial layouts,
-              and typography systems. Collaborate with another designer to create a cohesive visual identity.
+              Design and produce a full magazine from concept to print, working with layout design and typography systems. Collaborate with another designer to create a cohesive visual identity.
             </p>
 
             <div className="h-px bg-slate-200 my-16" />

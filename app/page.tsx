@@ -137,7 +137,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl text-stone-600 leading-relaxed">
-              I design logos, magazines, websites, and more. Recent Ball State grad passionate about projects that help communities.
+              I design logos, magazines, websites, and more. Recent Ball State grad passionate about creating projects that help communities.
             </p>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-xl">
-                I design logos, magazines, websites, and more. Recent Ball State grad passionate about projects that help communities.
+              I design logos, magazines, websites, and more. Recent Ball State grad passionate about creating projects that help communities.
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@ export default function Home() {
                   Cadence Magazine
                 </h3>
                 <p className="text-lg text-slate-600">
-                  100 Years of Influential Women in Music, editorial design celebrating music history
+                  100 Years of Influential Women in Music, magazine design celebrating music history
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-black text-white">InDesign</Badge>
@@ -288,10 +288,10 @@ export default function Home() {
                 Design with <span className="text-lime-600">Purpose</span>
               </h2>
               <p className="text-xl text-slate-600 leading-relaxed mb-6">
-                I believe great design does more than look good. It has the power to solve problems, connect people, and inspire change. Whether it's a brand identity or a digital experience, I focus on creating work that's both beautiful and meaningful.
+                I believe great design does more than look good. It has the power to solve problems, connect people, and inspire change. Whether it's a brand identity or a digital design, I focus on creating work that makes a meaningful impact.
               </p>
               <p className="text-xl text-slate-600 leading-relaxed">
-                Based in Indianapolis, I specialize in branding, illustration, and web development with a passion for community-focused projects.
+                Based in Indianapolis, I specialize in brand identity, print design, and digital experiences. I would love to collaborate on your next project and bring your vision to life!
               </p>
             </div>
             <div>
@@ -302,12 +302,12 @@ export default function Home() {
                   <p className="text-slate-600">Creating memorable visual identities that tell your story</p>
                 </div>
                 <div className="border-l-4 border-lime-200 pl-6">
-                  <h4 className="text-xl font-bold mb-2">Web Development</h4>
-                  <p className="text-slate-600">Building responsive, user-friendly websites with modern tech</p>
+                  <h4 className="text-xl font-bold mb-2">Print Design</h4>
+                  <p className="text-slate-600">Creating magazines, flyers, and other printed materials</p>
                 </div>
                 <div className="border-l-4 border-lime-200 pl-6">
-                  <h4 className="text-xl font-bold mb-2">Illustration</h4>
-                  <p className="text-slate-600">Bringing ideas to life with custom illustrations and graphics</p>
+                  <h4 className="text-xl font-bold mb-2">Digital Experiences</h4>
+                  <p className="text-slate-600">Designing websites, apps, and interactive digital products</p>
                 </div>
               </div>
 
