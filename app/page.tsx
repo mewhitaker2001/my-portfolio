@@ -193,14 +193,12 @@ export default function Home() {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline"
-                  className="border-2 border-stone-900 hover:bg-stone-900 hover:text-white"
-                  asChild
-                >
-                  <Link href="/contact">
-                    Get In Touch
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                variant="outline"
+                className="border-2 border-stone-900 hover:bg-stone-900 hover:text-white"
+                onClick={() => scrollToSection('contact')}
+              >
+                Get In Touch
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
             </div>
