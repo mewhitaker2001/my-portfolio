@@ -51,7 +51,7 @@ const projects = [
   {
     id: 5,
     title: "Muncie OUTreach",
-    description: "Colorful posters and social media templates for Pride events in Muncie. Our team of seven created custom icons and patterns that made it easy for organizers to keep their branding consistent.",
+    description: "Colorful posters and social media templates for Pride events in Muncie. Our team created custom icons and patterns that made it easy for organizers to keep their branding consistent.",
     image: "/images/project-5.jpg",
     gradient: "from-pink-500 to-purple-600",
     tools: ["Illustrator", "Canva", "Photoshop"],
@@ -80,9 +80,6 @@ export default function ProjectsPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{fontFamily: 'var(--font-manrope)'}}>
             My Work
           </h1>
-          <p className="text-xl text-stone-600 dark:text-stone-400 leading-relaxed">
-            From community brands to editorial design, here's the work I'm most proud of. Each project taught me something new about design and collaboration.
-          </p>
         </div>
       </div>
 
@@ -139,7 +136,7 @@ export default function ProjectsPage() {
           </h2>
           <p className="text-lg text-stone-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             I'm always looking for new projects and collaborations. Whether you need branding, 
-            editorial design, or a creative campaign, let's chat about what we can create together.
+            print design, or digital media, I'd love to hear from you!
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Button size="lg" className="bg-lime-600 hover:bg-lime-700 text-white shadow-lg" asChild>

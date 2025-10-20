@@ -243,7 +243,7 @@ function LogoProcessTabs() {
               </video>
             </div>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
-              Team walkthrough of strategic thinking, design decisions, and community research behind the redesign.
+              Walkthrough of strategic thinking and design decisions behind the new MAP logo and brand identity.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mt-6">
               <Badge className="bg-black text-white text-xs md:text-sm px-3 md:px-4 py-2">Strategic Thinking</Badge>
