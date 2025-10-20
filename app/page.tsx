@@ -139,14 +139,16 @@ export default function Home() {
             <p className="text-lg sm:text-xl text-stone-600 leading-relaxed">
               I design logos, magazines, websites, and more. Recent Ball State grad passionate about creating projects that help communities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+           <div className="flex gap-4">
+              <Button 
                 size="lg" 
                 className="bg-lime-600 hover:bg-lime-700 text-white"
-                onClick={() => scrollToSection('projects')}
+                asChild
               >
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <Link href="/projects">
+                  View My Work
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
               <Button 
                 size="lg" 
@@ -179,21 +181,26 @@ export default function Home() {
               I design logos, magazines, websites, and more. Recent Ball State grad passionate about creating projects that help communities.
               </p>
               <div className="flex gap-4">
-              <Button 
-                size="lg" 
-                className="bg-lime-600 hover:bg-lime-700 text-white"
-                onClick={() => scrollToSection('projects')}
-              >
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-stone-900 hover:bg-stone-900 hover:text-white"
-                onClick={() => scrollToSection('contact')}
-              >
-                Get In Touch
+                <Button 
+                  size="lg" 
+                  className="bg-lime-600 hover:bg-lime-700 text-white"
+                  asChild
+                >
+                  <Link href="/projects">
+                    View My Work
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-2 border-stone-900 hover:bg-stone-900 hover:text-white"
+                  asChild
+                >
+                  <Link href="/contact">
+                    Get In Touch
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
               </Button>
             </div>
             </div>
