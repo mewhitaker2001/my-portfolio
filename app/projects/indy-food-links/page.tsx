@@ -334,48 +334,56 @@ export default function IndyFoodLinksPage() {
         </div>
       </section>
 
-      {/* UX Prototype */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black mb-8">User Experience Concept</h2>
-            <p className="text-xl text-slate-600 mb-12 max-w-4xl leading-relaxed">
-              Interactive prototype demonstrating key user flows for connecting families with local food resources 
-              and support systems.
-            </p>
+     {/* UX Prototype */}
+<section className="py-24 bg-slate-50">
+  <div className="container mx-auto px-6">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-4xl md:text-6xl font-black mb-8">User Experience Concept</h2>
+      <p className="text-xl text-slate-600 mb-12 max-w-4xl leading-relaxed">
+        Interactive prototype demonstrating key user flows for connecting families with local food resources 
+        and support systems.
+      </p>
 
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-12">
-              <div className="p-6 bg-slate-50 border-b border-slate-200">
-                <h4 className="font-bold text-lg">Interactive Prototype</h4>
-                <p className="text-sm text-slate-600 mt-1">Click and navigate to explore the user experience</p>
-              </div>
-              <div className="aspect-[16/10]">
-                <iframe 
-                  style={{border: 'none'}} 
-                  width="100%" 
-                  height="100%" 
-                  src="https://embed.figma.com/proto/dvBXZps9Y66kL3TtggzPT6/Indy-Food-Links-Website?node-id=1-5&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A5&embed-host=share"
-                  allowFullScreen
-                  title="Indy Food Links Prototype"
-                ></iframe>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: "Events & Programs", desc: "Homepage showcasing upcoming events and community programs to connect families with resources" },
-                { title: "Fresh Links Program", desc: "Dedicated page highlighting the Fresh Links initiative connecting residents to fresh food sources" },
-                { title: "Support & Resources", desc: "Contact page, partner directory, about section, publications, and donation options for community members" }
-              ].map((feature) => (
-                <div key={feature.title} className="border-l-4 border-teal-600 pl-6 bg-white p-6 rounded-2xl shadow-lg">
-                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-slate-600">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
+      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-12">
+        <div className="p-6 bg-slate-50 border-b border-slate-200 flex justify-between items-center flex-wrap gap-4">
+          <div>
+            <h4 className="font-bold text-lg">Interactive Prototype</h4>
+            <p className="text-sm text-slate-600 mt-1">Click and navigate to explore the user experience</p>
           </div>
+          <Button asChild className="bg-teal-600 hover:bg-teal-700">
+            <a href="https://www.figma.com/proto/dvBXZps9Y66kL3TtggzPT6/Indy-Food-Links-Website?node-id=1-5&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A5" target="_blank" rel="noopener noreferrer">
+              Open in Figma
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
         </div>
-      </section>
+        <div className="aspect-[16/10]">
+          <iframe 
+            style={{border: 'none'}} 
+            width="100%" 
+            height="100%" 
+            src="https://embed.figma.com/proto/dvBXZps9Y66kL3TtggzPT6/Indy-Food-Links-Website?node-id=1-5&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A5&embed-host=share"
+            allowFullScreen
+            title="Indy Food Links Prototype"
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          { title: "Events & Programs", desc: "Homepage showcasing upcoming events and community programs to connect families with resources" },
+          { title: "Fresh Links Program", desc: "Dedicated page highlighting the Fresh Links initiative connecting residents to fresh food sources" },
+          { title: "Support & Resources", desc: "Contact page, partner directory, about section, publications, and donation options for community members" }
+        ].map((feature) => (
+          <div key={feature.title} className="border-l-4 border-teal-600 pl-6 bg-white p-6 rounded-2xl shadow-lg">
+            <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+            <p className="text-slate-600">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
 {/* Wireframes & User Flow */}
       <section className="py-24 bg-white">
