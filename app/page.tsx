@@ -294,7 +294,7 @@ export default function Home() {
                   Indy Food Links
                 </h3>
                 <p className="text-lg text-slate-600">
-                  Two-semester capstone project creating a community organization to address food access challenges in Marion County
+                  Capstone project creating a community organization to address food access challenges in Marion County
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-black text-white">Figma</Badge>
@@ -401,7 +401,8 @@ export default function Home() {
             </a>
           </div>
           <div className="mt-16 pt-8 border-t border-white/30 text-white/80">
-            <p>© 2025 Maddie Whitaker · Indianapolis, IN</p>
+            <p>© 2025 Maddie Whitaker · Built from scratch with Next.js & Tailwind CSS</p>
+            <p className="text-sm mt-2 text-white/60">Indianapolis, IN</p>
           </div>
         </div>
       </section>

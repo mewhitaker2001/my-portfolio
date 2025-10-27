@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Calendar, Users, Target, ArrowRight } from "lucide-react"
@@ -39,17 +40,13 @@ export default function RadianceCinemaPage() {
                 Complete Brand Book
               </p>
               
-              <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-                A comprehensive brand book for Ball State's campus film organization, including social media templates, 
-                stationery, and motion graphics to support their campus and industry presence.
-              </p>
+      <p className="text-xl text-slate-600 mb-12 leading-relaxed">
+        A comprehensive brand book for Ball State's campus film organization, including social media templates, 
+        stationery, and motion graphics to support their campus and industry presence.
+      </p>
 
               {/* Quick Stats */}
-             <div className="grid grid-cols-3 gap-6 mb-12">
-              <div className="border-l-4 border-amber-600 pl-4">
-                <div className="text-sm text-slate-500 mb-1">Duration</div>
-                <div className="text-lg md:text-2xl font-bold leading-tight">2 Semesters</div>
-              </div>
+              <div className="grid grid-cols-2 gap-6 mb-12">
                 <div className="border-l-4 border-amber-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Team</div>
                   <div className="text-2xl font-bold">Studio 165+</div>
@@ -306,6 +303,11 @@ export default function RadianceCinemaPage() {
                 All Projects
               </Link>
             </Button>
+          </div>
+     
+       <div className="mt-16 pt-8 border-t border-slate-200 text-slate-600">
+            <p>© 2025 Maddie Whitaker · Built from scratch with Next.js & Tailwind CSS</p>
+            <p className="text-sm mt-2 text-slate-500">Indianapolis, IN</p>
           </div>
         </div>
       </section>

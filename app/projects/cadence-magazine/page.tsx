@@ -46,11 +46,7 @@ export default function CadenceMagazinePage() {
               </p>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6 mb-12">
-                <div className="border-l-4 border-purple-600 pl-4">
-                  <div className="text-sm text-slate-500 mb-1">Duration</div>
-                  <div className="text-xl md:text-2xl font-bold break-words">3 Months</div>
-                </div>
+              <div className="grid grid-cols-2 gap-6 mb-12">
                 <div className="border-l-4 border-purple-600 pl-4">
                   <div className="text-sm text-slate-500 mb-1">Team</div>
                   <div className="text-2xl font-bold">2 Designers</div>
@@ -374,6 +370,11 @@ export default function CadenceMagazinePage() {
                 All Projects
               </Link>
             </Button>
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-slate-200 text-slate-600">
+            <p>© 2025 Maddie Whitaker · Built from scratch with Next.js & Tailwind CSS</p>
+            <p className="text-sm mt-2 text-slate-500">Indianapolis, IN</p>
           </div>
         </div>
       </section>

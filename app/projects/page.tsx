@@ -31,7 +31,7 @@ const projects = [
   {
     id: 3,
     title: "Indy Food Links",
-    description: "My senior capstone focused on food insecurity in Indianapolis. After two semesters of research, I designed a campaign addressing transportation barriers and access to support systems.",
+    description: "My senior capstone focused on food insecurity in Indianapolis. After extensive research, I designed a campaign addressing transportation barriers and access to support systems.",
     image: "/images/indy-food-links.jpg",
     gradient: "from-teal-500 to-teal-700",
     tools: ["Figma", "Illustrator", "InDesign", "Whimsical"],
@@ -128,7 +128,7 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* Call to Action */}
+     {/* Call to Action */}
       <div className="bg-gradient-to-br from-lime-50 to-emerald-100 py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{fontFamily: 'var(--font-manrope)'}}>
@@ -149,6 +149,11 @@ export default function ProjectsPage() {
                 Download Resume
               </a>
             </Button>
+          </div>
+          
+          <div className="mt-16 pt-8 border-t border-stone-300 text-stone-600">
+            <p>© 2025 Maddie Whitaker · Built from scratch with Next.js & Tailwind CSS</p>
+            <p className="text-sm mt-2 text-stone-500">Indianapolis, IN</p>
           </div>
         </div>
       </div>
