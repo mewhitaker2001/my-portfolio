@@ -338,12 +338,12 @@ export default function IndyFoodLinksPage() {
                 <div className="space-y-8">
                   <div className="border-l-4 border-teal-600 pl-6">
                     <p className="text-sm text-slate-500 mb-3 uppercase tracking-widest font-semibold">Primary Typeface</p>
-                    <p className="text-5xl font-bold mb-2">Manrope</p>
+                    <p className="text-5xl font-bold mb-2">Poppins</p>
                     <p className="text-slate-600">Modern, approachable, readable - Perfect for headlines and emphasis</p>
                   </div>
                   <div className="border-l-4 border-teal-600 pl-6">
                     <p className="text-sm text-slate-500 mb-3 uppercase tracking-widest font-semibold">Secondary Typeface</p>
-                    <p className="text-3xl mb-2">Nunito Sans</p>
+                    <p className="text-3xl mb-2">Soleil</p>
                     <p className="text-slate-600">Warm, friendly, highly legible - Ideal for body text and descriptions</p>
                   </div>
                 </div>
