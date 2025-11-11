@@ -8,6 +8,7 @@ import Link from "next/link"
 
 export default function IndyFoodLinksPage() {
   const [selectedLogo, setSelectedLogo] = useState<string | null>(null)
+  const [selectedMockup, setSelectedMockup] = useState<string | null>(null)
 
   const logoVariations = [
     {
@@ -87,7 +88,7 @@ export default function IndyFoodLinksPage() {
               <div>
                 <h4 className="text-sm uppercase tracking-widest text-slate-500 mb-4 font-semibold">Tools Used</h4>
                 <div className="flex flex-wrap gap-3">
-                  {["Figma", "Illustrator", "InDesign", "Whimsical"].map((tool) => (
+                  {["Figma", "Illustrator", "InDesign"].map((tool) => (
                     <Badge key={tool} variant="outline" className="border-2 border-slate-300 text-base px-4 py-2 hover:border-teal-600 hover:text-teal-600 transition-colors">
                       {tool}
                     </Badge>
@@ -264,6 +265,28 @@ export default function IndyFoodLinksPage() {
               </div>
             )}
 
+            {/* Mockup Image Modal */}
+            {selectedMockup && (
+              <div 
+                className="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4"
+                onClick={() => setSelectedMockup(null)}
+              >
+                <div className="relative max-w-6xl w-full rounded-2xl bg-white p-4">
+                  <button
+                    onClick={() => setSelectedMockup(null)}
+                    className="absolute top-4 right-4 p-2 hover:bg-slate-100 rounded-full transition-colors z-10"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                  <img
+                    src={selectedMockup}
+                    alt="Enlarged mockup"
+                    className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                  />
+                </div>
+              </div>
+            )}
+
             {/* Color Palette */}
             <div className="mb-24">
               <h3 className="text-3xl font-bold mb-8">Color Palette</h3>
@@ -330,84 +353,133 @@ export default function IndyFoodLinksPage() {
         </div>
       </section>
 
-     {/* UX Prototype */}
-<section className="py-24 bg-slate-50">
-  <div className="container mx-auto px-6">
-    <div className="max-w-6xl mx-auto">
-      <h2 className="text-4xl md:text-6xl font-black mb-8">User Experience Concept</h2>
-      <p className="text-xl text-slate-600 mb-12 max-w-4xl leading-relaxed">
-        Interactive prototype demonstrating key user flows for connecting families with local food resources 
-        and support systems.
-      </p>
-
-      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-12">
-        <div className="p-6 bg-slate-50 border-b border-slate-200 flex justify-between items-center flex-wrap gap-4">
-          <div>
-            <h4 className="font-bold text-lg">Interactive Prototype</h4>
-            <p className="text-sm text-slate-600 mt-1">Click and navigate to explore the user experience</p>
-          </div>
-          <Button asChild className="bg-teal-600 hover:bg-teal-700">
-            <a href="https://www.figma.com/proto/dvBXZps9Y66kL3TtggzPT6/Indy-Food-Links-Website?node-id=1-5&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A5" target="_blank" rel="noopener noreferrer">
-              Open in Figma
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </div>
-        <div className="aspect-[16/10]">
-          <iframe 
-            style={{border: 'none'}} 
-            width="100%" 
-            height="100%" 
-            src="https://embed.figma.com/proto/dvBXZps9Y66kL3TtggzPT6/Indy-Food-Links-Website?node-id=1-5&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A5&embed-host=share"
-            allowFullScreen
-            title="Indy Food Links Prototype"
-          ></iframe>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          { title: "Events & Programs", desc: "Homepage showcasing upcoming events and community programs to connect families with resources" },
-          { title: "Fresh Links Program", desc: "Dedicated page highlighting the Fresh Links initiative connecting residents to fresh food sources" },
-          { title: "Support & Resources", desc: "Contact page, partner directory, about section, publications, and donation options for community members" }
-        ].map((feature) => (
-          <div key={feature.title} className="border-l-4 border-teal-600 pl-6 bg-white p-6 rounded-2xl shadow-lg">
-            <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-            <p className="text-slate-600">{feature.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Wireframes & User Flow */}
-      <section className="py-24 bg-white">
+      {/* Website Design Mockups */}
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black mb-8">Wireframing & User Flow</h2>
+            <h2 className="text-4xl md:text-6xl font-black mb-8">Website Design</h2>
             <p className="text-xl text-slate-600 mb-16 max-w-4xl leading-relaxed">
-              Before jumping into high-fidelity design, I mapped out the site structure and user flows to ensure 
-              intuitive navigation between resources, events, and support options. These wireframes helped me think 
-              through the information architecture and plan how users would move through the site.
+              A responsive website concept designed to connect families with local food resources, community events, 
+              and support systems through an intuitive, accessible interface.
             </p>
 
-            <div className="aspect-[16/9] bg-slate-100 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-200">
-              <img
-                src="/images/indy-wireframes.jpg"
-                alt="Indy Food Links wireframes showing homepage, map, donation flow, and contact pages"
-                className="w-full h-full object-contain p-8"
-              />
+            {/* Homepage Mockup */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold mb-6">Homepage</h3>
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div className="aspect-[16/10]">
+                  <video
+                    src="/videos/indy-homepage-mockup.mp4"
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                The homepage highlights upcoming events and community programs, making it easy for families to discover opportunities to connect with resources.
+              </p>
             </div>
 
-            <p className="text-sm text-slate-500 italic text-center mt-4">
-             Some of the low-fidelity wireframes exploring site structure, navigation patterns, and content hierarchy
-            </p>
+            {/* Fresh Links Program Mockup */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold mb-6">Fresh Links Program</h3>
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div className="aspect-[16/10]">
+                  <video
+                    src="/videos/indy-fresh-links-mockup.mp4"
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <p className="text-slate-600 mt-4 leading-relaxed">
+                A information page for the Fresh Links initiative that connects residents directly to fresh food sources in their community.
+              </p>
+            </div>
+
+            {/* Additional Pages Grid */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Additional Pages</h3>
+              <p className="text-sm text-slate-500 mb-4 italic">Click images to view larger</p>
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div 
+                  className="bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow"
+                  onClick={() => setSelectedMockup("/images/indy-resources-mockup.jpg")}
+                >
+                  <div className="aspect-[4/3]">
+                    <img
+                      src="/images/indy-resources-mockup.jpg"
+                      alt="Resources and support page"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold mb-2">Resources & Support</h4>
+                    <p className="text-slate-600 text-sm">Partner directory and publications from the community</p>
+                  </div>
+                </div>
+                
+                <div 
+                  className="bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow"
+                  onClick={() => setSelectedMockup("/images/indy-contact-mockup.jpg")}
+                >
+                  <div className="aspect-[4/3]">
+                    <img
+                      src="/images/indy-contact-mockup.jpg"
+                      alt="Contact and about page"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold mb-2">Get Involved</h4>
+                    <p className="text-slate-600 text-sm">Contact information and ways for community members to connect and contribute</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Campaign Materials */}
+      {/* Wireframes & User Flow */}
+<section className="py-24 bg-white">
+  <div className="container mx-auto px-6">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-4xl md:text-6xl font-black mb-8">Wireframing & User Flow</h2>
+      <p className="text-xl text-slate-600 mb-16 max-w-4xl leading-relaxed">
+        Before jumping into high-fidelity design, I mapped out the site structure and user flows to ensure 
+        intuitive navigation between resources, events, and support options. These wireframes helped me think 
+        through the information architecture and plan how users would move through the site.
+      </p>
+
+      <div className="aspect-[16/9] bg-slate-100 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-200">
+        <img
+          src="/images/indy-wireframes.jpg"
+          alt="Indy Food Links wireframes showing homepage, map, donation flow, and contact pages"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <p className="text-sm text-slate-500 italic text-center mt-4">
+       Some of the low-fidelity wireframes exploring site structure, navigation patterns, and content hierarchy
+      </p>
+    </div>
+  </div>
+</section>
+
+     {/* Campaign Materials */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
@@ -416,11 +488,18 @@ export default function IndyFoodLinksPage() {
             <div className="space-y-16">
               <div>
                 <h3 className="text-3xl font-bold mb-8">Digital Campaign Assets</h3>
+                <p className="text-sm text-slate-500 mb-4 italic">Click images to view larger</p>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-blue-400 to-teal-500 rounded-2xl overflow-hidden shadow-xl">
+                  <div 
+                    className="aspect-[4/3] bg-gradient-to-br from-blue-400 to-teal-500 rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+                    onClick={() => setSelectedMockup("/images/indy-digital-campaign.jpg")}
+                  >
                     <img src="/images/indy-digital-campaign.jpg" alt="Digital Campaign" className="w-full h-full object-cover" />
                   </div>
-                  <div className="aspect-[4/3] bg-gradient-to-br from-teal-400 to-green-500 rounded-2xl overflow-hidden shadow-xl">
+                  <div 
+                    className="aspect-[4/3] bg-gradient-to-br from-teal-400 to-green-500 rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+                    onClick={() => setSelectedMockup("/images/indy-social-media.jpg")}
+                  >
                     <img src="/images/indy-social-media.jpg" alt="Social Media" className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -428,11 +507,18 @@ export default function IndyFoodLinksPage() {
 
               <div>
                 <h3 className="text-3xl font-bold mb-8">Print & Environmental Design</h3>
+                <p className="text-sm text-slate-500 mb-4 italic">Click images to view larger</p>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl overflow-hidden shadow-xl">
+                  <div 
+                    className="aspect-[4/3] bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+                    onClick={() => setSelectedMockup("/images/indy-print-materials.jpg")}
+                  >
                     <img src="/images/indy-print-materials.jpg" alt="Print Materials" className="w-full h-full object-cover" />
                   </div>
-                  <div className="aspect-[4/3] bg-gradient-to-br from-teal-500 to-green-500 rounded-2xl overflow-hidden shadow-xl">
+                  <div 
+                    className="aspect-[4/3] bg-gradient-to-br from-teal-500 to-green-500 rounded-2xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+                    onClick={() => setSelectedMockup("/images/indy-environmental.jpg")}
+                  >
                     <img src="/images/indy-environmental.jpg" alt="Environmental Design" className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -488,7 +574,7 @@ export default function IndyFoodLinksPage() {
             </Button>
           </div>
         
-        <div className="mt-16 pt-8 border-t border-slate-200 text-slate-600">
+          <div className="mt-16 pt-8 border-t border-slate-200 text-slate-600">
             <p>© 2025 Maddie Whitaker · Built from scratch with Next.js & Tailwind CSS</p>
             <p className="text-sm mt-2 text-slate-500">Indianapolis, IN</p>
           </div>
