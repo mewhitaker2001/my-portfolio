@@ -40,13 +40,13 @@ const projects = [
   },
   {
     id: 4,
-    title: "Cadence Magazine",
-    description: "A 70-page editorial celebrating 100 years of women in music. This collaborative project pushed typography and layout skills while honoring incredible artists across every genre.",
-    image: "/images/project-4.jpg",
-    gradient: "from-purple-500 to-pink-600",
-    tools: ["InDesign", "Photoshop", "Illustrator"],
-    category: "Editorial Design",
-    link: "/projects/cadence-magazine"
+    title: "Art Access",
+    description: "A museum companion app designed for visitors with Visual Processing Disorders. Features customizable text, reading rulers, and zoom capabilities to make art accessible to everyone.",
+    image: "/images/art-access.jpg",
+    gradient: "from-red-500 to-amber-600",
+    tools: ["Figma", "User Research", "Prototyping"],
+    category: "UX/UI Design",
+    link: "/projects/art-access"
   },
   {
     id: 5,

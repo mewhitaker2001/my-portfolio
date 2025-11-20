@@ -246,13 +246,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Project 2 - Cadence */}
+          {/* Project 2 - Art Access */}
           <div className="group cursor-pointer">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative h-96 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+              <div className="relative h-96 bg-gradient-to-br from-red-500 to-amber-600 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/images/cadence-cinema.jpg"
-                  alt="Cadence Magazine"
+                  src="/images/art-access.jpg"
+                  alt="Art Access App"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -262,18 +262,18 @@ export default function Home() {
                   <div className="h-px flex-1 bg-lime-600" />
                 </div>
                 <h3 className="text-4xl md:text-5xl font-bold group-hover:text-lime-600 transition-colors">
-                  Cadence Magazine
+                  Art Access
                 </h3>
                 <p className="text-lg text-slate-600">
-                  100 Years of Influential Women in Music, magazine design celebrating music history
+                  Museum companion app designed for visitors with Visual Processing Disorders, featuring customizable accessibility controls
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-black text-white">InDesign</Badge>
-                  <Badge className="bg-black text-white">Illustrator</Badge>
-                  <Badge className="bg-black text-white">Photoshop</Badge>
+                  <Badge className="bg-black text-white">UX/UI Design</Badge>
+                  <Badge className="bg-black text-white">Figma</Badge>
+                  <Badge className="bg-black text-white">Accessibility</Badge>
                 </div>
                 <Button variant="outline" className="group/btn border-2 border-black hover:bg-black hover:text-white" asChild>
-                  <Link href="/projects/cadence-magazine">
+                  <Link href="/projects/art-access">
                     View Case Study
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>

@@ -32,36 +32,34 @@ export default function PaletteCaseStudy() {
 
   return (
     <div className="font-inter">
-      {/* Full-Screen Hero */}
+      {/* Full-Screen Hero - Name is in the image */}
       <section className="relative h-screen flex flex-col">
-        {/* Text Content - Top Third */}
-        <div className="container mx-auto px-6 pt-32 pb-12">
-          <div className="flex items-start justify-between gap-12 mb-8">
-            {/* Left: Project Name */}
-            <h1 className="text-7xl md:text-8xl font-bold text-gray-900 font-geist">
-              Palette
-            </h1>
-            
-            {/* Right: Description */}
-            <p className="text-xl text-gray-700 max-w-xl pt-4">
-              A habit tracking app for creative people that celebrates progress over perfection
-            </p>
-          </div>
-          
-          {/* Divider Line */}
-          <div className="h-px bg-gray-300"></div>
+        <div className="relative h-full w-full">
+          <Image
+            src="/images/ux/palette/hero.png"
+            alt="Palette - A habit tracking app for creative people that celebrates progress over perfection"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
-
-        {/* Hero Image - Bottom Two-Thirds - FULL WIDTH */}
-        <div className="flex-1 relative w-full px-0 pb-0">
-          <div className="relative h-full overflow-hidden">
-            <Image
-              src="/images/ux/palette/hero.png"
-              alt="Palette app showcase"
-              fill
-              className="object-cover"
-              priority
-            />
+        
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center bg-black/40 backdrop-blur-sm shadow-lg">
+            <svg 
+              className="w-6 h-6 text-white" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 9l-7 7-7-7" 
+              />
+            </svg>
           </div>
         </div>
       </section>
